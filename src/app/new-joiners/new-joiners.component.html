@@ -1,35 +1,29 @@
-<h1>NgxCSVParser by <a href="https://DevelopersHive.com">Developers Hive</a></h1>
-<div class="csv-file-chooser-section">
 
-  <input type="file" #fileImportInput name="File Upload" id="csvFileUpload" (change)="fileChangeListener($event)"
+
+ <!--  <input type="file" #fileImportInput name="File Upload" id="csvFileUpload" (change)="fileChangeListener($event)"
     accept=".csv" />
 
-
-<div class="csv-result-table">
-
+      <tr *ngFor="let csvData of csvRecords;let i = index;">
 
         <td>{{i+1}}</td>
         <td>
           <span>{{csvData.firstName}}</span>
         </td>
-        <td>
-          <span>{{csvData.lastName}}</span>
-        </td>
-        <td>
-          <span>{{csvData.email}}</span>
-        </td>
-        <td>
-          <span>{{csvData.phoneNumber}}</span>
-        </td>
-        <td>
-          <span>{{csvData.title}}</span>
-        </td>
-        <td>
-          <span>{{csvData.occupation}}</span>
-        </td>
+       
 
       </tr>
-    </tbody>
-  </table>
+   -->
 
-</div>
+    <div class="list-sample">
+      <igx-list >
+          <igx-list-item [isHeader]="true"><button class="button">NEW JOINERS </button> </igx-list-item>
+          <igx-list-item igxRipple igxRippleTarget=".igx-list__item-content" #item *ngFor="let contact of newjoiners ">
+              <igx-avatar igxListThumbnail [src]="contact.photo" [roundShape]="true"></igx-avatar>
+              <span igxListLineTitle>{{ contact.name }}</span>
+              <span igxListLineSubTitle>{{ contact.email }}</span>
+              <span igxListLineSubTitle>{{ contact.interest }}</span>
+             
+          </igx-list-item>
+      </igx-list>
+    </div>
+  
