@@ -27,6 +27,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MentorsComponent } from './mentors/mentors.component';
 import { ListsComponent } from './lists/lists.component';
+import { MeetingsSuggestComponent } from './meetings-suggest/meetings-suggest.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ListsComponent } from './lists/lists.component';
     NewJoinersComponent,
     StepperComponent,
     MentorsComponent,
-    ListsComponent
+    ListsComponent,
+    MeetingsSuggestComponent
   ],
   imports: [
     FormsModule,
