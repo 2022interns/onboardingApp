@@ -23,11 +23,13 @@ import {
  import {MatStepperModule} from '@angular/material/stepper';
 import { StepperComponent } from './stepper/stepper.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field'; 
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MentorsComponent } from './mentors/mentors.component';
 import { ListsComponent } from './lists/lists.component';
 import { MeetingsSuggestComponent } from './meetings-suggest/meetings-suggest.component';
+import { MatTableModule } from '@angular/material/table';
+import { SchedualMeetingComponent } from './schedual-meeting/schedual-meeting.component'
 
 @NgModule({
   declarations: [
@@ -38,7 +40,10 @@ import { MeetingsSuggestComponent } from './meetings-suggest/meetings-suggest.co
     StepperComponent,
     MentorsComponent,
     ListsComponent,
-    MeetingsSuggestComponent
+    MeetingsSuggestComponent,
+    SchedualMeetingComponent,
+    
+    
   ],
   imports: [
     FormsModule,
@@ -51,7 +56,8 @@ import { MeetingsSuggestComponent } from './meetings-suggest/meetings-suggest.co
     IgxInputGroupModule,
     IgxButtonGroupModule,
     IgxRippleModule,MatCardModule,MatIconModule,MatStepperModule,BrowserAnimationsModule ,ReactiveFormsModule,MatFormFieldModule,MatGridListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
