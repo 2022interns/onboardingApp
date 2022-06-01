@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxCsvParser, NgxCSVParserError, NgxCsvParserModule } from 'ngx-csv-parser';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +27,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MentorsComponent } from './mentors/mentors.component';
 import { ListsComponent } from './lists/lists.component';
+
+import {MatTableModule} from '@angular/material/table';
 import { MeetingsSuggestComponent } from './meetings-suggest/meetings-suggest.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+
+/* import {  GridComponent } from '@syncfusion/ej2-angular-grids';  */
+
 
 @NgModule({
   declarations: [
@@ -38,7 +44,10 @@ import { MeetingsSuggestComponent } from './meetings-suggest/meetings-suggest.co
     StepperComponent,
     MentorsComponent,
     ListsComponent,
-    MeetingsSuggestComponent
+    MeetingsSuggestComponent,
+    FeedbackComponent,
+
+   
   ],
   imports: [
     FormsModule,
@@ -51,10 +60,12 @@ import { MeetingsSuggestComponent } from './meetings-suggest/meetings-suggest.co
     IgxInputGroupModule,
     IgxButtonGroupModule,
     IgxRippleModule,MatCardModule,MatIconModule,MatStepperModule,BrowserAnimationsModule ,ReactiveFormsModule,MatFormFieldModule,MatGridListModule,
-    MatToolbarModule
+    MatToolbarModule,MatTableModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+],
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class AppModule {
 }

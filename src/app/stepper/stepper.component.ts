@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+export interface PeriodicElement {
+  name: string;
+  invitation: string;
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  {invitation: "accepted", name: 'Hydrogen', },
+  {invitation: "pending", name: 'Helium',},
+ ];
+
 
 @Component({
   selector: 'app-stepper',
@@ -7,20 +16,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./stepper.component.scss']
 })
 export class StepperComponent  {
-/* 
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup; 
-  isEditable = false;
-
-
-  constructor(private _formBuilder: FormBuilder) {}
-
-  ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required],
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
-    });
-  }
-} */}
+  displayedColumns: string[] = ['invitation', 'name'];
+  dataSource = ELEMENT_DATA;
+}
