@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxCsvParser, NgxCSVParserError, NgxCsvParserModule } from 'ngx-csv-parser';
 import { AppRoutingModule } from './app-routing.module';
@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { NewJoinersComponent } from './new-joiners/new-joiners.component';
-import { FormsModule } from '@angular/forms';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -21,32 +21,39 @@ import {
  } from "igniteui-angular";
  import {MatIconModule} from '@angular/material/icon';
  import {MatStepperModule} from '@angular/material/stepper';
-import { StepperComponent } from './stepper/stepper.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MentorsComponent } from './mentors/mentors.component';
 import { ListsComponent } from './lists/lists.component';
+
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { BasicAuthInterceptor, ErrorInterceptor } from './_helpers';
 import { MeetingsSuggestComponent } from './meetings-suggest/meetings-suggest.component';
 import { MatTableModule } from '@angular/material/table';
 import { SchedualMeetingComponent } from './schedual-meeting/schedual-meeting.component'
 
+import { HomeComponent } from './home';
+import { StepperComponent } from './stepper/stepper.component';
+import {MatTableModule} from '@angular/material/table';
+import { FeedbackComponent } from './feedback/feedback.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     FileUploadComponent,
     NewJoinersComponent,
-    StepperComponent,
     MentorsComponent,
     ListsComponent,
+    HomeComponent,
+    StepperComponent,
+    FeedbackComponent
     MeetingsSuggestComponent,
     SchedualMeetingComponent,
-    
-    
   ],
   imports: [
-    FormsModule,
+   
     BrowserModule,
     AppRoutingModule, NgxCsvParserModule,
     BrowserAnimationsModule,IgxAvatarModule,
@@ -56,11 +63,14 @@ import { SchedualMeetingComponent } from './schedual-meeting/schedual-meeting.co
     IgxInputGroupModule,
     IgxButtonGroupModule,
     IgxRippleModule,MatCardModule,MatIconModule,MatStepperModule,BrowserAnimationsModule ,ReactiveFormsModule,MatFormFieldModule,MatGridListModule,
-    MatToolbarModule,
-    MatTableModule,
+    MatToolbarModule, HttpClientModule,MatTableModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class AppModule {
 }
