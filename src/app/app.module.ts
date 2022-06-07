@@ -23,12 +23,16 @@ import {
  import {MatStepperModule} from '@angular/material/stepper';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field'; 
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MentorsComponent } from './mentors/mentors.component';
 import { ListsComponent } from './lists/lists.component';
+
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BasicAuthInterceptor, ErrorInterceptor } from './_helpers';
+import { MeetingsSuggestComponent } from './meetings-suggest/meetings-suggest.component';
+import { MatTableModule } from '@angular/material/table';
+import { SchedualMeetingComponent } from './schedual-meeting/schedual-meeting.component'
 
 import { HomeComponent } from './home';
 import { StepperComponent } from './stepper/stepper.component';
@@ -45,6 +49,8 @@ import { FeedbackComponent } from './feedback/feedback.component';
     HomeComponent,
     StepperComponent,
     FeedbackComponent
+    MeetingsSuggestComponent,
+    SchedualMeetingComponent,
   ],
   imports: [
    
@@ -62,7 +68,6 @@ import { FeedbackComponent } from './feedback/feedback.component';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
