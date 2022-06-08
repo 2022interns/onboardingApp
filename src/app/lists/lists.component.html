@@ -1,33 +1,11 @@
 <div class="col">
-  <div class="col1">
-    <app-new-joiners></app-new-joiners>
-  </div>
-  <div class="col2">
-    <app-mentors></app-mentors>
-  </div>
-</div>
-<div class="form-row">
-  <div class="col">
-    <div class="form-group">
-      <label for="start">Start</label>
-      <input type="datetime-local" class="form-control" id="start"
-             required
-             [(ngModel)]="model.start" name="start"
-             #name="ngModel">
-      <div [hidden]="name.valid || name.pristine"
-           class="alert alert-danger">Start is required</div>
+    <div class="col1">
+     <app-new-joiners></app-new-joiners>
+    </div>
+    
+    <div class="col2">
+        
+      <app-mentors></app-mentors>
     </div>
   </div>
-  <div class="col">
-    <div class="form-group">
-      <label for="end">End</label>
-      <input type="datetime-local" class="form-control" id="end"
-             required
-             [(ngModel)]="model.end" name="end"
-             #name="ngModel">
-      <div [hidden]="name.valid || name.pristine"
-           class="alert alert-danger">End is required</div>
-    </div>
-  </div>
-</div>
-<button class="button" (click)="Suggest()" >SUGGEST MEETINGS</button>
+  <button class="button">SUGGEST MEETINGS</button> 
