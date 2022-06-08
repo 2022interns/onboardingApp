@@ -1,18 +1,21 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-// <homeSnippet>
+// <navBarSnippet>
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from '../auth.service';
 import { User } from '../user';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-nav-bar',
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.css']
 })
-export class HomeComponent implements OnInit {
+export class NavBarComponent implements OnInit {
+
+  // Should the collapsed nav show?
+  showNav: boolean = false;
   // Is a user logged in?
   get authenticated(): boolean {
     return this.authService.authenticated;
@@ -26,8 +29,18 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() { }
 
+  // Used by the Bootstrap navbar-toggler button to hide/show
+  // the nav in a collapsed state
+  toggleNavBar(): void {
+    this.showNav = !this.showNav;
+  }
+
   async signIn(): Promise<void> {
     await this.authService.signIn();
   }
+
+  signOut(): void {
+    this.authService.signOut();
+  }
 }
-// </homeSnippet>
+// </navBarSnippet>
