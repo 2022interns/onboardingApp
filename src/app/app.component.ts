@@ -1,28 +1,13 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { User } from './_models';
-import { AuthenticationService } from './_services';
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
 
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  user: User | undefined;
-  title: any;
-  
-
-  constructor(
-      private router: Router,
-      private authenticationService: AuthenticationService
-  ) {
-      this.authenticationService.user.subscribe(x => this.user = x);
-  }
-
-  logout() {
-      this.authenticationService.logout();
-  }
+  title = 'graph-tutorial';
 }
-

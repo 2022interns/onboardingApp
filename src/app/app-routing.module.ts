@@ -1,15 +1,22 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login';
-import { SchedualMeetingComponent } from './schedual-meeting/schedual-meeting.component';
-import { HomeComponent } from './home';
-import { AuthGuard } from './_helpers';
+import { HomeComponent } from './home/home.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { NewEventComponent } from './new-event/new-event.component';
+import {FindMeetingComponent} from "./find-meeting/find-meeting.component";
+import { ListsComponent } from './lists/lists.component';
+import {CalendarapiComponent} from "./calendarapi/calendarapi.component";
 
 const routes: Routes = [
-{ path: '', component: HomeComponent, canActivate: [AuthGuard] },
-{ path: 'login', component:LoginComponent },
-{ path: 'schedule-meeting', component:SchedualMeetingComponent },
-{ path: '**', redirectTo: '' }
+  { path: '', component: HomeComponent },
+  { path: 'calendar', component: CalendarComponent },
+  { path: 'newevent', component: NewEventComponent },
+  { path: 'findmeeting', component: FindMeetingComponent },
+  { path: 'lists', component: ListsComponent },
+  { path: 'api/calendar', component: CalendarapiComponent },
 ];
 
 @NgModule({
