@@ -21,9 +21,6 @@ import { OAuthSettings } from '../oauth';
 import { CalendarComponent } from './calendar/calendar.component';
 import { NewEventComponent } from './new-event/new-event.component';
 import { FindMeetingComponent } from './find-meeting/find-meeting.component';
-import { NewJoinersComponent } from './new-joiners/new-joiners.component';
-import { MentorsComponent } from './mentors/mentors.component';
-import { ListsComponent } from './lists/lists.component';
 import {
 	IgxAvatarModule,
 	IgxFilterModule,
@@ -66,9 +63,6 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     CalendarComponent,
     NewEventComponent,
     FindMeetingComponent,
-    NewJoinersComponent,
-    MentorsComponent,
-    ListsComponent,
     CalendarapiComponent,
   ],
   // <ImportsSnippet>

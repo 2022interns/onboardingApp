@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { NewEventComponent } from './new-event/new-event.component';
 import {FindMeetingComponent} from "./find-meeting/find-meeting.component";
-import { ListsComponent } from './lists/lists.component';
 import {CalendarapiComponent} from "./calendarapi/calendarapi.component";
 
 const routes: Routes = [
@@ -15,7 +14,6 @@ const routes: Routes = [
   { path: 'calendar', component: CalendarComponent },
   { path: 'newevent', component: NewEventComponent },
   { path: 'findmeeting', component: FindMeetingComponent },
-  { path: 'lists', component: ListsComponent },
   { path: 'api/calendar', component: CalendarapiComponent },
 ];
 
