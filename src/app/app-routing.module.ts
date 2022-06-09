@@ -10,15 +10,17 @@ import {FindMeetingComponent} from "./find-meeting/find-meeting.component";
 import {CalendarapiComponent} from "./calendarapi/calendarapi.component";
 import {SchedualMeetingComponent} from "./schedual-meeting/schedual-meeting.component";
 import {ListsComponent} from "./lists/lists.component";
+import {StepperComponent} from "./stepper/stepper.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'newevent', component: NewEventComponent },
   { path: 'findmeeting', component: FindMeetingComponent },
-  { path: 'api/calendar', component: CalendarapiComponent },
+  { path: 'api/findmeeting', component: CalendarapiComponent },
   { path: 'schedule-meeting', component:SchedualMeetingComponent },
   { path: 'lists', component:ListsComponent },
+  { path: 'stepper', component:StepperComponent },
 ];
 
 @NgModule({

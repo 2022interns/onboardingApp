@@ -47,6 +47,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatTableModule} from "@angular/material/table";
+import {StepperComponent} from "./stepper/stepper.component";
 
 // <MSALFactorySnippet>
 let msalInstance: IPublicClientApplication | undefined = undefined;
@@ -84,6 +85,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     ListsComponent,
     HomeComponent,
     FeedbackComponent,
+    StepperComponent
   ],
   // <ImportsSnippet>
   imports: [
