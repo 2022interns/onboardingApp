@@ -34,6 +34,19 @@ import {
  import { ReactiveFormsModule } from '@angular/forms';
 import { CalendarapiComponent } from './calendarapi/calendarapi.component';
 import {HttpClientModule} from "@angular/common/http";
+import {SchedualMeetingComponent} from "./schedual-meeting/schedual-meeting.component";
+import {ListsComponent} from "./lists/lists.component";
+import {FeedbackComponent} from "./feedback/feedback.component";
+import {MentorsComponent} from "./mentors/mentors.component";
+import {NewJoinersComponent} from "./new-joiners/new-joiners.component";
+import {FileUploadComponent} from "./file-upload/file-upload.component";
+import {MatCardModule} from "@angular/material/card";
+import {MatIconModule} from "@angular/material/icon";
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatTableModule} from "@angular/material/table";
 
 // <MSALFactorySnippet>
 let msalInstance: IPublicClientApplication | undefined = undefined;
@@ -64,6 +77,13 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     NewEventComponent,
     FindMeetingComponent,
     CalendarapiComponent,
+    SchedualMeetingComponent,
+    FileUploadComponent,
+    NewJoinersComponent,
+    MentorsComponent,
+    ListsComponent,
+    HomeComponent,
+    FeedbackComponent,
   ],
   // <ImportsSnippet>
   imports: [
@@ -78,7 +98,12 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     IgxInputGroupModule,
     IgxButtonGroupModule,
     IgxRippleModule,BrowserAnimationsModule, ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,MatIconModule,MatStepperModule,BrowserAnimationsModule ,ReactiveFormsModule,MatFormFieldModule,MatGridListModule,
+    MatToolbarModule, HttpClientModule,MatTableModule
   ],
   // </ImportsSnippet>
   // <ProvidersSnippet>

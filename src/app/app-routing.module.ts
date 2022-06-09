@@ -8,6 +8,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { NewEventComponent } from './new-event/new-event.component';
 import {FindMeetingComponent} from "./find-meeting/find-meeting.component";
 import {CalendarapiComponent} from "./calendarapi/calendarapi.component";
+import {SchedualMeetingComponent} from "./schedual-meeting/schedual-meeting.component";
+import {ListsComponent} from "./lists/lists.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'newevent', component: NewEventComponent },
   { path: 'findmeeting', component: FindMeetingComponent },
   { path: 'api/calendar', component: CalendarapiComponent },
+  { path: 'schedule-meeting', component:SchedualMeetingComponent },
+  { path: 'lists', component:ListsComponent },
 ];
 
 @NgModule({
