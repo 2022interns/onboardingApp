@@ -48,6 +48,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatTableModule} from "@angular/material/table";
 import {StepperComponent} from "./stepper/stepper.component";
+import { LaunshMeetingComponent } from './launsh-meeting/launsh-meeting.component';
 
 // <MSALFactorySnippet>
 let msalInstance: IPublicClientApplication | undefined = undefined;
@@ -85,7 +86,8 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     ListsComponent,
     HomeComponent,
     FeedbackComponent,
-    StepperComponent
+    StepperComponent,
+    LaunshMeetingComponent
   ],
   // <ImportsSnippet>
   imports: [

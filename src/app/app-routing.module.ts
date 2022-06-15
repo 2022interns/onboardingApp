@@ -11,6 +11,7 @@ import {CalendarapiComponent} from "./calendarapi/calendarapi.component";
 import {SchedualMeetingComponent} from "./schedual-meeting/schedual-meeting.component";
 import {ListsComponent} from "./lists/lists.component";
 import {StepperComponent} from "./stepper/stepper.component";
+import { LaunshMeetingComponent } from './launsh-meeting/launsh-meeting.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'schedule-meeting', component:SchedualMeetingComponent },
   { path: 'lists', component:ListsComponent },
   { path: 'stepper', component:StepperComponent },
+  { path: 'launch-meeting', component:LaunshMeetingComponent },
 ];
 
 @NgModule({
