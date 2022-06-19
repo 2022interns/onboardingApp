@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from "../services/api.service";
 
 export interface PeriodicElement {
   Mentors: string;
@@ -10,11 +11,8 @@ export interface PeriodicElement {
 let date: string[] = ["25/02/2022"];
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {Mentors: 'Sofiene', New_joiner: "Amani", Topic: 'Java', Meeting:date,button:''},
-  {Mentors: 'Houssem', New_joiner: "salha", Topic: 'Angular', Meeting:date,button:''},
-  {Mentors: 'Seifedine', New_joiner: "Skander", Topic: 'Docker', Meeting:date,button:''},
-  {Mentors: 'Raoua', New_joiner: "Arbi", Topic: '.Net', Meeting:date,button:''},
-
+  {Mentors: 'Salha', New_joiner: "Skander", Topic: 'Java', Meeting:date,button:''},
+  {Mentors: 'Amani', New_joiner: "Arbi", Topic: 'Angular', Meeting:date,button:''}
 ];
 @Component({
   selector: 'app-launsh-meeting',
@@ -22,8 +20,19 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./launsh-meeting.component.scss']
 })
 export class LaunshMeetingComponent {
-
   displayedColumns: string[] = ['Mentors', 'New joiner', 'Topic', 'Meeting','button'];
-  dataSource = ELEMENT_DATA;
+  dataSource: any;
+
+  constructor(private apiService: ApiService) { }
+
+  ngOnInit(): void {
+    this.apiService.getSugg().subscribe((res)=> {
+      console.log(res);
+      this.dataSource=res.result.meetingSugg;
+    })
+  }
+
+
+
 
 }
