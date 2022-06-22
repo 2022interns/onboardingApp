@@ -66,7 +66,10 @@ export class ApiService {
   }
 
   getNewjoiners(){
-    return this.http.get<any>(this.url+'newjoiners');
+    return this.http.get<any>('http://localhost:3000/newjoiners');
+  }
+  getMentors(){
+    return this.http.get<any>('http://localhost:3000/mentors');
   }
   creatEvent(users: any){
     let storage = JSON.parse(<string>localStorage.getItem('fd8224fb-1681-459b-9de7-b4b865020f65.88f58169-ed46-4a73-8f4c-7efff9f3e4fa-login.windows.net-accesstoken-92bfacc0-fa7d-4b36-91e8-f4f1a5e84c80-88f58169-ed46-4a73-8f4c-7efff9f3e4fa-calendars.readwrite mailboxsettings.read openid profile user.read email'));

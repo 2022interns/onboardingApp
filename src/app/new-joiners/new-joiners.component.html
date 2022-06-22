@@ -19,7 +19,7 @@
           <igx-list-item [isHeader]="true"><button class="button">NEW JOINERS </button> </igx-list-item>
           <igx-list-item igxRipple igxRippleTarget=".igx-list__item-content" #item *ngFor="let contact of newjoiners ">
               <igx-avatar igxListThumbnail [src]="contact.photo" [roundShape]="true"></igx-avatar>
-              <span igxListLineTitle>{{ contact.name }}</span>
+              <span igxListLineTitle>{{ contact.fullname }}</span>
               <span igxListLineSubTitle>{{ contact.email }}</span>
               <span igxListLineSubTitle>{{ contact.interest }}</span>
              
