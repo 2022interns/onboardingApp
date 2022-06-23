@@ -37,6 +37,10 @@ export class LaunshMeetingComponent {
     this.apiService.creatEvent(users).subscribe((res)=>console.log('event created! '+ res))
   }
 
+  CreateMeets(list: any){
+    this.apiService.creatEvents(list).subscribe((res)=>{alert('events created! ')})
+  }
+
 
 
 
