@@ -20,6 +20,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./launsh-meeting.component.scss']
 })
 export class LaunshMeetingComponent {
+
   displayedColumns: string[] = ['Mentors', 'New joiner', 'Topic', 'Meeting','button'];
   dataSource: any;
 
