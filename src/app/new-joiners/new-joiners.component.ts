@@ -15,7 +15,8 @@ export class NewJoinersComponent  {
   }
 
   ngOnInit(): void {
-    this.serviceapi.getNewjoiners().subscribe((result)=>this.newjoiners=result);
+    this.serviceapi.getNewjoiners().subscribe((result)=>this.newjoiners=result );
+    
   }
 
 }

@@ -15,12 +15,35 @@
           </div>
         </div>
         <form class="login-form">
-            <p>Please enter new joiners list</p>
+            <!-- <p>Please enter new joiners list</p>
             <input type="file" class="file-upload" placeholder="username"onchange="console.log(event.target.files)">
             <p>Please enter experts list</p>
             <input type="file" class="file-upload" placeholder="username"onchange="console.log(event.target.files)">
-          <button>UPLOAD</button>
-  
+          <button>UPLOAD</button> -->
+           <!-- file mentors -->
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text upload" (click)="upload()" id="btnUpload">Upload</span>
+            </div>
+            <div class="custom-file">
+                <form action="/api/upload" method="post" enctype="multipart/form-data">
+                  <input (change)="fileChange($event)"  type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                </form>
+              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            </div>
+          </div>
+            <!-- file newjoiners -->
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text upload" (click)="upload1()" id="btnUpload">Upload</span>
+            </div>
+            <div class="custom-file">
+                <form action="/api/upload" method="post" enctype="multipart/form-data">
+                  <input (change)="fileChange1($event)"  type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                </form>
+              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            </div>
+          </div>
         </form>
       </div>
     </div>
