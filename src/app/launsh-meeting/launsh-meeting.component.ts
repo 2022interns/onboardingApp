@@ -20,6 +20,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./launsh-meeting.component.scss']
 })
 export class LaunshMeetingComponent {
+
   displayedColumns: string[] = ['Mentors', 'New joiner', 'Topic', 'Meeting','button'];
   dataSource: any;
 
@@ -34,6 +35,10 @@ export class LaunshMeetingComponent {
 
   CreateOneMeet(users: any){
     this.apiService.creatEvent(users).subscribe((res)=>console.log('event created! '+ res))
+  }
+
+  CreateMeets(list: any){
+    this.apiService.creatEvents(list).subscribe((res)=>{alert('events created! ')})
   }
 
 

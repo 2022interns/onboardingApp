@@ -30,8 +30,8 @@
 
 
         <select matNativeControl required>
-          <option>
-            {{element.Meeting}}
+          <option *ngFor="let meeting of element.meetings.meetingTimeSuggestions" value="{{meeting.meetingTimeSlot.start.dateTime}}">
+            {{meeting.meetingTimeSlot.start.dateTime}}
           </option>
         </select>
 
@@ -48,6 +48,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
   </table>
-  <button id="Launch-all" class="btn btn-success" >Launch all</button>
+  <button id="Launch-all" class="btn btn-success" (click)="CreateMeets(dataSource)" >Launch all</button>
 </div>
 
