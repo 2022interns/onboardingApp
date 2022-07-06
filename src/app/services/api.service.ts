@@ -75,4 +75,17 @@ export class ApiService {
     return this.http.post<any>(this.url+'createAll',events);
   }
 
+  getEvents(){
+    let storage = JSON.parse(<string>localStorage.getItem('fd8224fb-1681-459b-9de7-b4b865020f65.88f58169-ed46-4a73-8f4c-7efff9f3e4fa-login.windows.net-accesstoken-92bfacc0-fa7d-4b36-91e8-f4f1a5e84c80-88f58169-ed46-4a73-8f4c-7efff9f3e4fa-calendars.readwrite mailboxsettings.read openid profile user.read email'));
+    const token =  storage.secret;
+
+    const body={
+      "token":token
+    };
+    return this.http.post<any>('http://localhost:3000/graph/getEvents',body);
+  }
+
+  getEventsDB(){
+    return this.http.get<Event[]>('http://localhost:3000/graph/getEventsDB');
+  }
 }

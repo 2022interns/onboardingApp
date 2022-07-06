@@ -11,6 +11,7 @@ import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
 import { AuthService } from '../auth.service';
 import { GraphService } from '../graph.service';
 import { AlertsService } from '../alerts.service';
+import {ApiService} from "../services/api.service";
 
 @Component({
   selector: 'app-calendar',
@@ -24,10 +25,12 @@ export class CalendarComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private graphService: GraphService,
-    private alertsService: AlertsService) { }
+    private alertsService: AlertsService,
+    private apiService: ApiService) { }
 
   // <ngOnInitSnippet>
   async ngOnInit() {
+    this.apiService.getEventsDB().subscribe((data)=>console.log(data));
     // Convert the user's timezone to IANA format
     const ianaName = findIana(this.authService.user?.timeZone ?? 'UTC');
     const timeZone = ianaName![0].valueOf() || this.authService.user?.timeZone || 'UTC';
