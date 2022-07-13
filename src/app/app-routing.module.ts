@@ -12,9 +12,14 @@ import {SchedualMeetingComponent} from "./schedual-meeting/schedual-meeting.comp
 import {ListsComponent} from "./lists/lists.component";
 import {StepperComponent} from "./stepper/stepper.component";
 import { LaunshMeetingComponent } from './launsh-meeting/launsh-meeting.component';
-import { FileUploadComponent } from './file-upload/file-upload.component';
+
 import { NewJoinersComponent } from './new-joiners/new-joiners.component';
 import { MentorsComponent } from './mentors/mentors.component';
+import { CalendarSynComponent } from './calendar-syn/calendar-syn.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+
+
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,9 +31,15 @@ const routes: Routes = [
   { path: 'lists', component:ListsComponent },
   { path: 'stepper', component:StepperComponent },
   { path: 'launch-meeting', component:LaunshMeetingComponent },
-  { path: 'file', component:FileUploadComponent },
+  { path: 'file', component:FileUploadComponent},
   { path: 'joiners', component:NewJoinersComponent },
   { path: 'mentors', component:MentorsComponent },
+  { path: 'syncalendar', component:CalendarSynComponent },
+  
+
+  
+
+
 ];
 
 @NgModule({

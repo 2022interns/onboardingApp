@@ -39,7 +39,7 @@ import {ListsComponent} from "./lists/lists.component";
 import {FeedbackComponent} from "./feedback/feedback.component";
 import {MentorsComponent} from "./mentors/mentors.component";
 import {NewJoinersComponent} from "./new-joiners/new-joiners.component";
-import {FileUploadComponent} from "./file-upload/file-upload.component";
+
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
 import {MatStepperModule} from "@angular/material/stepper";
@@ -49,6 +49,14 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatTableModule} from "@angular/material/table";
 import {StepperComponent} from "./stepper/stepper.component";
 import { LaunshMeetingComponent } from './launsh-meeting/launsh-meeting.component';
+import { CalendarSynComponent } from './calendar-syn/calendar-syn.component';
+import { ScheduleModule, View } from '@syncfusion/ej2-angular-schedule';
+import { WeekService, MonthService} from '@syncfusion/ej2-angular-schedule';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+
+import {MatListModule} from '@angular/material/list';
+   
+
 
 // <MSALFactorySnippet>
 let msalInstance: IPublicClientApplication | undefined = undefined;
@@ -87,7 +95,10 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     HomeComponent,
     FeedbackComponent,
     StepperComponent,
-    LaunshMeetingComponent
+    LaunshMeetingComponent,
+    CalendarSynComponent,
+  
+  
   ],
   // <ImportsSnippet>
   imports: [
@@ -107,7 +118,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,MatIconModule,MatStepperModule,BrowserAnimationsModule ,ReactiveFormsModule,MatFormFieldModule,MatGridListModule,
-    MatToolbarModule, HttpClientModule,MatTableModule
+    MatToolbarModule, HttpClientModule,MatTableModule, ScheduleModule,MatListModule,
   ],
   // </ImportsSnippet>
   // <ProvidersSnippet>
@@ -116,7 +127,10 @@ export function MSALInstanceFactory(): IPublicClientApplication {
       provide: MSAL_INSTANCE,
       useFactory: MSALInstanceFactory
     },
-    MsalService
+    MsalService,
+    WeekService,
+      MonthService
+
   ],
   // </ProvidersSnippet>
   bootstrap: [AppComponent]
