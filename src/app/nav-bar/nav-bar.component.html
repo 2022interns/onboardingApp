@@ -4,7 +4,7 @@
 <!-- <navHtml> -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container">
-    <a routerLink="/" class="navbar-brand">Angular Graph Tutorial</a>
+    <a routerLink="/" class="navbar-brand">FIS INTEGRATION</a>
     <button class="navbar-toggler" type="button" (click)="toggleNavBar()" [attr.aria-expanded]="showNav"
     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,9 +14,9 @@
         <li class="nav-item">
           <a routerLink="/" class="nav-link" routerLinkActive="active">Home</a>
         </li>
-        <li *ngIf="authenticated" class="nav-item">
+        <!-- <li *ngIf="authenticated" class="nav-item">
           <a routerLink="/calendar" class="nav-link" routerLinkActive="active">Calendar</a>
-        </li>
+        </li> -->
         <li *ngIf="authenticated" class="nav-item">
           <a routerLink="/file" class="nav-link" routerLinkActive="active">File</a>
         </li>
@@ -24,13 +24,19 @@
           <a routerLink="/lists" class="nav-link" routerLinkActive="active">Lists</a>
         </li>
         <li *ngIf="authenticated" class="nav-item">
+          <a routerLink="/launch-meeting" class="nav-link" routerLinkActive="active">Suggest Meeting</a>
+        </li>
+        <li *ngIf="authenticated" class="nav-item">
           <a routerLink="/schedule-meeting" class="nav-link" routerLinkActive="active">schedule meeting</a>
+        </li>
+        <li *ngIf="authenticated" class="nav-item">
+          <a routerLink="/stepper" class="nav-link" routerLinkActive="active">Stepper</a>
         </li>
       </ul>
       <ul class="navbar-nav justify-content-end">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="https://docs.microsoft.com/graph/overview" target="_blank">Docs</a>
-        </li>
+        </li> -->
         <li *ngIf="authenticated" ngbDropdown placement="bottom-right" class="nav-item">
           <a ngbDropdownToggle id="userMenu" class="nav-link avatar-link" role="button" aria-haspopup="true"
             aria-expanded="false">

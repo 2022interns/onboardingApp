@@ -55,6 +55,7 @@ import { WeekService, MonthService} from '@syncfusion/ej2-angular-schedule';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 
 import {MatListModule} from '@angular/material/list';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
    
 
 
@@ -118,7 +119,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,MatIconModule,MatStepperModule,BrowserAnimationsModule ,ReactiveFormsModule,MatFormFieldModule,MatGridListModule,
-    MatToolbarModule, HttpClientModule,MatTableModule, ScheduleModule,MatListModule,
+    MatToolbarModule, HttpClientModule,MatTableModule, ScheduleModule,MatListModule,MatSlideToggleModule
   ],
   // </ImportsSnippet>
   // <ProvidersSnippet>

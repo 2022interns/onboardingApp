@@ -1,4 +1,6 @@
-<h2>Schedule meeting</h2>
+<mat-slide-toggle (change)="change">View Calendar</mat-slide-toggle>
+
+<h2 *ngIf="test">Schedule meeting</h2>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.

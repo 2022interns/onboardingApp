@@ -23,16 +23,24 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./schedual-meeting.component.scss']
 })
 export class SchedualMeetingComponent{
+  test?: boolean;
 
   displayedColumns: string[] = ['Mentors', 'New joiner', 'Topic', 'Meeting','Status','button'];
+
   dataSource: any;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+  	this.test=false ;
     this.apiService.getEventsDB().subscribe((res)=> {
       console.log(res);
       this.dataSource=res;
     })
-  }
+	}
+	change(){
+    this.test=true
+     console.log(this.test)
+  	}
+  
 }
