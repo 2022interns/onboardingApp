@@ -55,7 +55,9 @@ import { WeekService, MonthService} from '@syncfusion/ej2-angular-schedule';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 
 import {MatListModule} from '@angular/material/list';
-   
+import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
+import { MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 // <MSALFactorySnippet>
@@ -97,8 +99,9 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     StepperComponent,
     LaunshMeetingComponent,
     CalendarSynComponent,
-  
-  
+    FeedbackFormComponent,
+
+
   ],
   // <ImportsSnippet>
   imports: [
@@ -117,7 +120,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule,MatIconModule,MatStepperModule,BrowserAnimationsModule ,ReactiveFormsModule,MatFormFieldModule,MatGridListModule,
+    MatCardModule,MatIconModule,MatStepperModule,BrowserAnimationsModule ,ReactiveFormsModule,MatFormFieldModule,MatSelectModule,MatRadioModule,MatGridListModule,
     MatToolbarModule, HttpClientModule,MatTableModule, ScheduleModule,MatListModule,
   ],
   // </ImportsSnippet>
