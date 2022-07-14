@@ -22,7 +22,18 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./schedual-meeting.component.scss']
 })
 export class SchedualMeetingComponent{
+  test?: boolean;
 
   displayedColumns: string[] = ['Mentors', 'New joiner', 'Topic', 'Meeting','Status','button'];
   dataSource = ELEMENT_DATA;
+  ngOnInit(){
+    this.test=false ;
+    
+
+  }
+  change(){
+    this.test=true
+     console.log(this.test)
+
+  }
 }
