@@ -32,15 +32,14 @@ export class SchedualMeetingComponent{
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-  	this.test=false ;
+  	this.test=false;
     this.apiService.getEventsDB().subscribe((res)=> {
       console.log(res);
       this.dataSource=res;
     })
 	}
-	change(){
-    this.test=true
-     console.log(this.test)
-  	}
-  
+  change(){
+    this.test=!this.test;
+  }
+
 }

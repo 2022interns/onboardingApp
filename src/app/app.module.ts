@@ -56,7 +56,6 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 
 import {MatListModule} from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-   
 
 
 // <MSALFactorySnippet>
@@ -98,8 +97,8 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     StepperComponent,
     LaunshMeetingComponent,
     CalendarSynComponent,
-  
-  
+
+
   ],
   // <ImportsSnippet>
   imports: [

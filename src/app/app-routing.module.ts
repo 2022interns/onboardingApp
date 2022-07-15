@@ -35,9 +35,6 @@ const routes: Routes = [
   { path: 'joiners', component:NewJoinersComponent },
   { path: 'mentors', component:MentorsComponent },
   { path: 'syncalendar', component:CalendarSynComponent },
-  
-
-  
 
 
 ];
