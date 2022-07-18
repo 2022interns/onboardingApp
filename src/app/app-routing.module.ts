@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'api/findmeeting', component: CalendarapiComponent },
   { path: 'schedule-meeting', component:SchedualMeetingComponent },
   { path: 'lists', component:ListsComponent },
-  { path: 'stepper', component:StepperComponent },
+  { path: 'stepper/:id', component:StepperComponent },
   { path: 'launch-meeting', component:LaunshMeetingComponent },
   { path: 'file', component:FileUploadComponent},
   { path: 'joiners', component:NewJoinersComponent },

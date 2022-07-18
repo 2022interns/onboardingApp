@@ -40,7 +40,7 @@
   <ng-container matColumnDef="button">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element">
-      <button>More details</button>
+      <a href="/stepper/{{element._id}}">More details</a>
     </td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
