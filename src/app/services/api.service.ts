@@ -59,12 +59,14 @@ export class ApiService {
   getNewjoiners(){
     return this.http.get<NewJoiner[]>('http://localhost:3000/users/newjoiners');
   }
-  creatEvent(users: any){
-    let storage = JSON.parse(<string>localStorage.getItem('fd8224fb-1681-459b-9de7-b4b865020f65.88f58169-ed46-4a73-8f4c-7efff9f3e4fa-login.windows.net-accesstoken-92bfacc0-fa7d-4b36-91e8-f4f1a5e84c80-88f58169-ed46-4a73-8f4c-7efff9f3e4fa-calendars.readwrite mailboxsettings.read openid profile user.read email'));
+  creatEvent(){
+    let accounts: Array<any>;
+    accounts=this.msalService.instance.getAllAccounts();
+    const str= accounts[0].homeAccountId+'-login.windows.net-accesstoken-'+accounts[0].idTokenClaims.aud+'-'+accounts[0].idTokenClaims.tid+'-calendars.readwrite mailboxsettings.read openid profile user.read email';
+    let storage = JSON.parse(<string>localStorage.getItem(str));
     const token =  storage.secret;
 
     const event={
-      users:users,
       "token":token
     };
     return this.http.post<any>(this.url+'create',event);
@@ -99,5 +101,17 @@ export class ApiService {
 
   getEventsDB(){
     return this.http.get<Event[]>('http://localhost:3000/graph/getEventsDB');
+  }
+  getEventById(id: string){
+    let accounts: Array<any>;
+    accounts=this.msalService.instance.getAllAccounts();
+    const str= accounts[0].homeAccountId+'-login.windows.net-accesstoken-'+accounts[0].idTokenClaims.aud+'-'+accounts[0].idTokenClaims.tid+'-calendars.readwrite mailboxsettings.read openid profile user.read email';
+    let storage = JSON.parse(<string>localStorage.getItem(str));
+    const token =  storage.secret;
+
+    const body={
+      "token":token
+    };
+    return this.http.post<any>('http://localhost:3000/graph/getEventById/'+id,body);
   }
 }

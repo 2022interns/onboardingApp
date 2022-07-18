@@ -33,8 +33,8 @@ export class LaunshMeetingComponent {
     })
   }
 
-  CreateOneMeet(users: any){
-    this.apiService.creatEvent(users).subscribe((res)=>console.log('event created! '+ res))
+  CreateOneMeet(){
+    this.apiService.creatEvent().subscribe((res)=>console.log(res))
   }
 
   CreateMeets(list: any){
