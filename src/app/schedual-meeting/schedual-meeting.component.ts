@@ -34,8 +34,10 @@ export class SchedualMeetingComponent{
   ngOnInit(): void {
   	this.test=false;
     this.apiService.getEventsDB().subscribe((res)=> {
-      console.log(res);
       this.dataSource=res;
+    })
+    this.apiService.getEvents().subscribe((res)=> {
+      console.log(res);
     })
 	}
   change(){
