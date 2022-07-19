@@ -17,6 +17,7 @@ import { NewJoinersComponent } from './new-joiners/new-joiners.component';
 import { MentorsComponent } from './mentors/mentors.component';
 import { CalendarSynComponent } from './calendar-syn/calendar-syn.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import {FeedbackFormComponent} from "./feedback-form/feedback-form.component";
 
 
 
@@ -35,7 +36,7 @@ const routes: Routes = [
   { path: 'joiners', component:NewJoinersComponent },
   { path: 'mentors', component:MentorsComponent },
   { path: 'syncalendar', component:CalendarSynComponent },
-
+  { path: 'form', component:FeedbackFormComponent },
 
 ];
 
