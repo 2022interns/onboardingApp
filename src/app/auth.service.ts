@@ -27,7 +27,6 @@ export class AuthService {
     private alertsService: AlertsService) {
 
     const accounts = this.msalService.instance.getAllAccounts();
-    console.log(accounts[0]);
 
     this.authenticated = accounts.length > 0;
     if (this.authenticated) {
@@ -101,4 +100,6 @@ export class AuthService {
     return user;
   }
   // </GetUserSnippet>
+
+  
 }
