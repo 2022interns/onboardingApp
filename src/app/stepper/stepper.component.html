@@ -11,14 +11,14 @@
                       </div>
           <div class="mat-row">
             <div class="mat-cell">{{dataSource.Mentor.name}}</div>
-            <div class="mat-cell">{{dataSource.MentorStatus}}</div>
+            <div class="mat-cell">{{dataSource?.MentorStatus}}</div>
           </div>
           <div class="mat-row">
             <div class="mat-cell">{{dataSource.NewJoiner.name}}</div>
-            <div class="mat-cell">{{dataSource.NewJoinerStatus}}</div>
+            <div class="mat-cell">{{dataSource?.NewJoinerStatus}}</div>
           </div>
         </div>
-         
+
      </div>
     </mat-card>
      </mat-step>
@@ -38,7 +38,7 @@
               {{dataSource.Mentor.name}},{{dataSource.NewJoiner.name}}
              </td>
            </tr>
-          
+
          </thead></div>
          <tbody>
            <tr>
@@ -74,9 +74,9 @@
          </tbody>
        </table> -->
        <mat-card>
-        
+
          <div class="mat-table">
-         
+
            <div class="mat-row">
              <div class="mat-header-cell">Attendees </div>
              <div class="mat-header-cell">{{dataSource.Mentor.name}} ,{{dataSource.NewJoiner.name}}</div>
@@ -98,8 +98,8 @@
             <div class="mat-cell">Done </div>
           </div>
          </div>
-         
-      
+
+
      </mat-card>
      </mat-step>
      <mat-step label="FEEDBACK">
@@ -108,19 +108,19 @@
             <div class="col-lg-6 mb-4">
       <mat-card class="example-card">
         <mat-card-title>New joiner's Feedback</mat-card-title>
-        
+
       </mat-card> </div>
-     
+
             <div class="col-lg-6 mb-4">
       <mat-card class="example-card">
         <mat-card-title>Mentors's Feedback</mat-card-title>
-        
+
       </mat-card>
       </div></div></div>
      </mat-step>
 
      <mat-step label="FINISH">
-      
+
       <h1>Congratulations , you've done it</h1>
      </mat-step>
 
