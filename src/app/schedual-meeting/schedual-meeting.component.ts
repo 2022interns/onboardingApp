@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from "../services/api.service";
 
 export interface PeriodicElement {
   Mentors: string;
@@ -22,7 +23,25 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./schedual-meeting.component.scss']
 })
 export class SchedualMeetingComponent{
+  test?: boolean;
 
   displayedColumns: string[] = ['Mentors', 'New joiner', 'Topic', 'Meeting','Status','button'];
-  dataSource = ELEMENT_DATA;
+
+  dataSource: any;
+
+  constructor(private apiService: ApiService) { }
+
+  ngOnInit(): void {
+  	this.test=false;
+    this.apiService.getEventsDB().subscribe((res)=> {
+      this.dataSource=res;console.log(res);
+    })
+    this.apiService.getEvents().subscribe((res)=> {
+      
+    })
+	}
+  change(){
+    this.test=!this.test;
+  }
+
 }

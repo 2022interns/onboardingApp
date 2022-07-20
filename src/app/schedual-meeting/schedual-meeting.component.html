@@ -1,3 +1,5 @@
+<mat-slide-toggle (change)="change()">View Calendar</mat-slide-toggle>
+<app-calendar-syn *ngIf="test"></app-calendar-syn>
 <h2>Schedule meeting</h2>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -7,37 +9,39 @@
   <!-- Position Column -->
   <ng-container matColumnDef="Mentors">
     <th mat-header-cell *matHeaderCellDef>Mentors</th>
-    <td mat-cell *matCellDef="let element"> {{element.Mentors}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.Mentor.name}} </td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="New joiner">
-    <th mat-header-cell *matHeaderCellDef> New joiner </th>
-    <td mat-cell *matCellDef="let element"> {{element.New_joiner}} </td>
+    <th mat-header-cell *matHeaderCellDef> New joiner</th>
+    <td mat-cell *matCellDef="let element"> {{element.NewJoiner?.name}} </td>
   </ng-container>
 
   <!-- Weight Column -->
   <ng-container matColumnDef="Topic">
-    <th mat-header-cell *matHeaderCellDef> Topic </th>
-    <td mat-cell *matCellDef="let element"> {{element.Topic}} </td>
+    <th mat-header-cell *matHeaderCellDef> Topic</th>
+    <td mat-cell *matCellDef="let element"> {{element.Subject}} </td>
   </ng-container>
 
   <!-- Symbol Column -->
   <ng-container matColumnDef="Meeting">
-    <th mat-header-cell *matHeaderCellDef> Meeting </th>
-    <td mat-cell *matCellDef="let element"> {{element.Meeting}} </td>
+    <th mat-header-cell *matHeaderCellDef> Start Time</th>
+    <td mat-cell *matCellDef="let element"> {{element.StartTime}} </td>
   </ng-container>
 
-   <!-- Status Column -->
-   <ng-container matColumnDef="Status">
-    <th mat-header-cell *matHeaderCellDef> Status </th>
-    <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
+  <!-- Status Column -->
+  <ng-container matColumnDef="Status">
+    <th mat-header-cell *matHeaderCellDef> End Time</th>
+    <td mat-cell *matCellDef="let element"> {{element.EndTime}} </td>
   </ng-container>
-  
-   <!-- button Column -->
-   <ng-container matColumnDef="button">
-    <th mat-header-cell *matHeaderCellDef>  </th>
-    <td mat-cell *matCellDef="let element"> <button>More details</button> </td>
+
+  <!-- button Column -->
+  <ng-container matColumnDef="button">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <a href="/stepper/{{element._id}}">More details</a>
+    </td>
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

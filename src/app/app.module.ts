@@ -1,15 +1,26 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgxCsvParser, NgxCSVParserError, NgxCsvParserModule } from 'ngx-csv-parser';
+import { FormsModule } from '@angular/forms';
+import { IPublicClientApplication,
+         PublicClientApplication,
+         BrowserCacheLocation } from '@azure/msal-browser';
+import { MsalModule,
+         MsalService,
+         MSAL_INSTANCE } from '@azure/msal-angular';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login';
-import { FileUploadComponent } from './file-upload/file-upload.component';
-import { NewJoinersComponent } from './new-joiners/new-joiners.component';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HomeComponent } from './home/home.component';
+import { AlertsComponent } from './alerts/alerts.component';
+import { OAuthSettings } from '../oauth';
+import { CalendarComponent } from './calendar/calendar.component';
+import { NewEventComponent } from './new-event/new-event.component';
+import { FindMeetingComponent } from './find-meeting/find-meeting.component';
 import {
 	IgxAvatarModule,
 	IgxFilterModule,
@@ -19,56 +30,119 @@ import {
 	IgxButtonGroupModule,
 	IgxRippleModule
  } from "igniteui-angular";
- import {MatIconModule} from '@angular/material/icon';
- import {MatStepperModule} from '@angular/material/stepper';
+ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ import { ReactiveFormsModule } from '@angular/forms';
+import { CalendarapiComponent } from './calendarapi/calendarapi.component';
+import {HttpClientModule} from "@angular/common/http";
+import {SchedualMeetingComponent} from "./schedual-meeting/schedual-meeting.component";
+import {ListsComponent} from "./lists/lists.component";
+import {FeedbackComponent} from "./feedback/feedback.component";
+import {MentorsComponent} from "./mentors/mentors.component";
+import {NewJoinersComponent} from "./new-joiners/new-joiners.component";
 
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MentorsComponent } from './mentors/mentors.component';
-import { ListsComponent } from './lists/lists.component';
+import {MatCardModule} from "@angular/material/card";
+import {MatIconModule} from "@angular/material/icon";
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatTableModule} from "@angular/material/table";
+import {StepperComponent} from "./stepper/stepper.component";
+import { LaunshMeetingComponent } from './launsh-meeting/launsh-meeting.component';
+import { CalendarSynComponent } from './calendar-syn/calendar-syn.component';
+import { ScheduleModule, View } from '@syncfusion/ej2-angular-schedule';
+import { WeekService, MonthService} from '@syncfusion/ej2-angular-schedule';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { BasicAuthInterceptor, ErrorInterceptor } from './_helpers';
-import { MeetingsSuggestComponent } from './meetings-suggest/meetings-suggest.component';
-import { MatTableModule } from '@angular/material/table';
-import { SchedualMeetingComponent } from './schedual-meeting/schedual-meeting.component'
+import {MatListModule} from '@angular/material/list';
 
-import { HomeComponent } from './home';
-import { StepperComponent } from './stepper/stepper.component';
-import { FeedbackComponent } from './feedback/feedback.component';
+import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
+import { MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
+
+
+// <MSALFactorySnippet>
+let msalInstance: IPublicClientApplication | undefined = undefined;
+
+export function MSALInstanceFactory(): IPublicClientApplication {
+  msalInstance = msalInstance ?? new PublicClientApplication({
+    auth: {
+      clientId: OAuthSettings.appId,
+      redirectUri: OAuthSettings.redirectUri,
+      postLogoutRedirectUri: OAuthSettings.redirectUri
+    },
+    cache: {
+      cacheLocation: BrowserCacheLocation.LocalStorage,
+    }
+  });
+
+  return msalInstance;
+}
+// </MSALFactorySnippet>
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    NavBarComponent,
+    HomeComponent,
+    AlertsComponent,
+    CalendarComponent,
+    NewEventComponent,
+    FindMeetingComponent,
+    CalendarapiComponent,
+    SchedualMeetingComponent,
     FileUploadComponent,
     NewJoinersComponent,
     MentorsComponent,
     ListsComponent,
     HomeComponent,
-    StepperComponent,
     FeedbackComponent,
-    SchedualMeetingComponent,
-  ],
-  imports: [
+    StepperComponent,
+    LaunshMeetingComponent,
+    CalendarSynComponent,
+    FeedbackFormComponent,
 
+
+
+  ],
+  // <ImportsSnippet>
+  imports: [
     BrowserModule,
-    AppRoutingModule, NgxCsvParserModule,
-    BrowserAnimationsModule,IgxAvatarModule,
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    MsalModule,IgxAvatarModule,
     IgxFilterModule,
     IgxIconModule,
     IgxListModule,
     IgxInputGroupModule,
     IgxButtonGroupModule,
-    IgxRippleModule,MatCardModule,MatIconModule,MatStepperModule,BrowserAnimationsModule ,ReactiveFormsModule,MatFormFieldModule,MatGridListModule,
-    MatToolbarModule, HttpClientModule,MatTableModule
+    IgxRippleModule,BrowserAnimationsModule, ReactiveFormsModule,
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+
+    MatCardModule,MatIconModule,MatStepperModule,BrowserAnimationsModule ,ReactiveFormsModule,MatFormFieldModule,MatSelectModule,MatRadioModule,MatGridListModule,MatGridListModule,
+    MatToolbarModule, HttpClientModule,MatTableModule, ScheduleModule,MatListModule,MatSlideToggleModule
+
   ],
+  // </ImportsSnippet>
+  // <ProvidersSnippet>
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    {
+      provide: MSAL_INSTANCE,
+      useFactory: MSALInstanceFactory
+    },
+    MsalService,
+    WeekService,
+      MonthService
+
   ],
-  bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  // </ProvidersSnippet>
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

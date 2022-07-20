@@ -1,10 +1,19 @@
-﻿<div class="card mt-4">
-    <h4 class="card-header">You're logged in with Angular 10 & Basic HTTP Authentication!!</h4>
-    <div class="card-body">
-        <h6>Users from secure api end point</h6>
-        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
-        <ul *ngIf="users">
-            <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
-        </ul>
-    </div>
+<!-- Copyright (c) Microsoft Corporation.
+     Licensed under the MIT License. -->
+
+<!-- <homeHtml> -->
+<div class="jumbotron">
+  <h1>Welcome To FIS integration app</h1>
+  <p class="lead">This sample app helps you to plan meetings between new joiners and mentors and to follow the process </p>
+ 
+  <div *ngIf="authenticated; then welcomeUser else signInPrompt"></div>
+  <ng-template #welcomeUser>
+    <h4>Welcome {{ user != null ? user.displayName : '' }}!</h4>
+    <p>Use the navigation bar at the top of the page to get started.</p>
+  </ng-template>
+  <ng-template #signInPrompt>
+    <p>Dear  people office , you need to sign in with your professional microsoft account </p>
+    <button class="btn btn-success btn-large" role="button" (click)="signIn()">Click here to sign in</button>
+  </ng-template>
 </div>
+<!-- </homeHtml> -->

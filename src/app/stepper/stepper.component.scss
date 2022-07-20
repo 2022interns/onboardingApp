@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 .mat-stepper-horizontal {
     margin-top: 8px;
   }
@@ -8,11 +9,28 @@
  table {
     width: 100%;
   }
-  mat-table {
+
+
+  
+  .mat-row,
+  .mat-header-row {
     display: flex;
-    flex-direction: row;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 24px;
   }
   
-  mat-row, mat-header-row {
-    flex-direction: column;
+  .mat-cell,
+  .mat-header-cell {
+    flex: 1;
+    overflow: hidden;
+    word-wrap: break-word;
   }
+  .example-card {
+    max-width: 800px;
+  }
+  mat-card-title{color: #04AA6D; font-family: "Great Vibes", cursive; font-size: 20px; line-height: 160px; font-weight: normal; margin-bottom: 0px; margin-top: 40px; text-align: center; text-shadow: 0 1px 1px #fff;}
+  h1 { color: #04AA6D; font-family: "Great Vibes", cursive; font-size: 50px; line-height: 160px; font-weight: normal; margin-bottom: 0px; margin-top: 40px; text-align: center; text-shadow: 0 1px 1px #fff; }
+  h4 { color: #04AA6D; font-family: "Great Vibes", cursive; font-size: 50px; line-height: 100px; font-weight: normal; margin-bottom: 0px; margin-top: 0px; text-align: center; text-shadow: 0 1px 1px #fff; }

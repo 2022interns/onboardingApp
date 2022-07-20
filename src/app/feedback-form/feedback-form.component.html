@@ -1,0 +1,45 @@
+<div class="example-container">
+  <form [formGroup]="options">
+    <div>
+      <mat-radio-group [formControl]="floatLabelControl">
+        <label>Did you join the meeting ? </label><br>
+        <mat-radio-button value="auto">yes</mat-radio-button><br>
+        <mat-radio-button value="always">no</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <label>Please give your reasons : </label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <textarea matInput placeholder="Reasons"></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-radio-group [formControl]="floatLabelControl">
+        <label>Did you find this meeting interactive? </label><br>
+        <mat-radio-button value="auto">yes</mat-radio-button><br>
+        <mat-radio-button value="always">no</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <mat-radio-group [formControl]="floatLabelControl">
+        <label>Do you want to continue the process until you reach the objective ?    </label><br>
+        <mat-radio-button value="auto">yes</mat-radio-button><br>
+        <mat-radio-button value="always">no</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <label>If no please say why: </label><br>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <textarea matInput placeholder="Why"></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-radio-group [formControl]="floatLabelControl">
+        <label>Overall, how satisfied are you with THIS  experience? </label><br>
+        <mat-radio-button value="auto">satisfied</mat-radio-button><br>
+        <mat-radio-button value="always">Neither satisfied nor dissatisfied</mat-radio-button><br>
+        <mat-radio-button value="always">unsatisfied</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+</div>
