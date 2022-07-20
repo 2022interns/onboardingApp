@@ -2,43 +2,25 @@
     <!--- STEEEEEP 1 -->
 
      <mat-step label="INVITATION">
+       <mat-card>
        <div class="control-section">
-         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-           <!--- Note that these columns can be defined in any order.
-                 The actual rendered columns are set as a property on the row definition" -->
-
-
-           <!-- Position Column -->
-           <ng-container matColumnDef="invitation">
-             <th mat-header-cell *matHeaderCellDef> Invitation </th>
-             <td mat-cell *matCellDef="let element"> {{element.invitation}} </td>
-             <td mat-cell *matCellDef="let element"> {{element.invitation}} </td>
-           </ng-container>
-
-           <!-- Name Column -->
-           <ng-container matColumnDef="name">
-             <th mat-header-cell *matHeaderCellDef> Name </th>
-             <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-           </ng-container>
-
-           <!-- Weight Column -->
-           <ng-container matColumnDef="weight">
-             <th mat-header-cell *matHeaderCellDef> Weight </th>
-
-             <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-           </ng-container>
-
-           <!-- Symbol Column -->
-           <ng-container matColumnDef="symbol">
-             <th mat-header-cell *matHeaderCellDef> Symbol </th>
-             <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-           </ng-container>
-
-           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-         </table>
+        <div class="mat-table">
+          <div class="mat-header-row">
+            <div class="mat-header-cell">Attendees </div>
+            <div class="mat-header-cell">Invitation</div>
+                      </div>
+          <div class="mat-row">
+            <div class="mat-cell">{{dataSource.Mentor.name}}</div>
+            <div class="mat-cell">{{dataSource.MentorStatus}}</div>
+          </div>
+          <div class="mat-row">
+            <div class="mat-cell">{{dataSource.NewJoiner.name}}</div>
+            <div class="mat-cell">{{dataSource.NewJoinerStatus}}</div>
+          </div>
+        </div>
+         
      </div>
+    </mat-card>
      </mat-step>
 
 
@@ -47,20 +29,22 @@
 
      <mat-step label="MEETING">
        <h4>Meeting's details</h4>
-       <table class="mat-table">
+       <!-- <table class="mat-table">
+        <div class="mat-row">
          <thead>
            <tr>
              <th class="mat-header-cell">Attendees </th>
              <td class="mat-cell">
-               ameni , salha
+              {{dataSource.Mentor.name}},{{dataSource.NewJoiner.name}}
              </td>
            </tr>
-         </thead>
+          
+         </thead></div>
          <tbody>
            <tr>
              <th class="mat-header-cell">Topic</th>
              <td class="mat-cell" >
-              DEVOPS
+              {{dataSource.Subject}}
              </td>
            </tr>
          </tbody>
@@ -68,14 +52,15 @@
            <tr>
              <th class="mat-header-cell">Time of start</th>
              <td class="mat-cell" >
-               28/05/2022-17H00          </td>
+              {{dataSource.StartTime}}
+                      </td>
            </tr>
          </tbody>
          <tbody>
            <tr>
              <th class="mat-header-cell">Date of end </th>
              <td class="mat-cell" >
-               28/05/2022-17H00
+              {{dataSource.EndTime}}
              </td>
            </tr>
          </tbody>
@@ -87,17 +72,56 @@
              </td>
            </tr>
          </tbody>
-       </table>
+       </table> -->
+       <mat-card>
+        
+         <div class="mat-table">
+         
+           <div class="mat-row">
+             <div class="mat-header-cell">Attendees </div>
+             <div class="mat-header-cell">{{dataSource.Mentor.name}} ,{{dataSource.NewJoiner.name}}</div>
+                       </div>
+           <div class="mat-row">
+             <div class="mat-cell">TOPIC</div>
+             <div class="mat-cell">  {{dataSource.Subject}}</div>
+           </div>
+           <div class="mat-row">
+             <div class="mat-cell">Time of start </div>
+             <div class="mat-cell">{{dataSource.StartTime}}</div>
+           </div>
+           <div class="mat-row">
+            <div class="mat-cell">Time of End</div>
+            <div class="mat-cell">{{dataSource.EndTime}}</div>
+          </div>
+          <div class="mat-row">
+            <div class="mat-cell">Status </div>
+            <div class="mat-cell">Done </div>
+          </div>
+         </div>
+         
+      
+     </mat-card>
      </mat-step>
      <mat-step label="FEEDBACK">
-       <mat-grid-list cols="2" rowHeight="2:1">
-         <mat-grid-tile>NEW JOINER'S FEEDBACK</mat-grid-tile>
-         <mat-grid-tile>MENTOR'S FEEDBACK</mat-grid-tile>
-       </mat-grid-list>
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+      <mat-card class="example-card">
+        <mat-card-title>New joiner's Feedback</mat-card-title>
+        
+      </mat-card> </div>
+     
+            <div class="col-lg-6 mb-4">
+      <mat-card class="example-card">
+        <mat-card-title>Mentors's Feedback</mat-card-title>
+        
+      </mat-card>
+      </div></div></div>
      </mat-step>
 
      <mat-step label="FINISH">
-      <H1>CONGRATS! You are now done.</H1>
+      
+      <h1>Congratulations , you've done it</h1>
      </mat-step>
 
    </mat-horizontal-stepper>
