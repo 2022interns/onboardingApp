@@ -14,15 +14,14 @@
       </tr>
    -->
 
-    <div class="list-sample">
-      <igx-list >
-          <igx-list-item [isHeader]="true"><button class="button">NEW JOINERS </button> </igx-list-item>
-          <igx-list-item igxRipple igxRippleTarget=".igx-list__item-content" #item *ngFor="let contact of newjoiners ">
-              <igx-avatar igxListThumbnail  [roundShape]="true"></igx-avatar>
-              <span igxListLineTitle>{{ contact.name }}</span>
-              <span igxListLineSubTitle>{{ contact.email }}</span>
-              <span igxListLineSubTitle>{{ contact.interest }}</span>
-
-          </igx-list-item>
-      </igx-list>
-    </div>
+    <mat-list>
+      <div mat-subheader>NEW JOINERS</div>
+      <mat-list-item *ngFor="let folder of newjoiners">
+        <mat-icon mat-list-icon>person_pin</mat-icon>
+        <div mat-line>{{folder.name}}</div>
+        <div mat-line> {{folder.email}} </div>
+        <div mat-line> {{folder.interest}} </div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+     
+    </mat-list>
