@@ -1,45 +1,46 @@
 <div class="example-container">
-  <form [formGroup]="options">
+  <form >
     <div>
-      <mat-radio-group [formControl]="floatLabelControl">
+      <mat-radio-group  [(ngModel)]="feedback.Answer1" [ngModelOptions]="{standalone: true}">
         <label>Did you join the meeting ? </label><br>
         <mat-radio-button value="yes">yes</mat-radio-button><br>
         <mat-radio-button value="no">no</mat-radio-button>
       </mat-radio-group>
     </div>
-    <div>
+    <div >
       <label>Please give your reasons : </label><br>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <textarea matInput placeholder="Reasons"></textarea>
+      <mat-form-field  class="example-full-width" appearance="fill">
+        <textarea matInput placeholder="Reasons" [(ngModel)]="feedback.Answer2" [ngModelOptions]="{standalone: true}"></textarea>
       </mat-form-field>
     </div>
     <div>
-      <mat-radio-group [formControl]="floatLabelControl">
+      <mat-radio-group [(ngModel)]="feedback.Answer3" [ngModelOptions]="{standalone: true}">
         <label>Did you find this meeting interactive? </label><br>
-        <mat-radio-button value="auto">yes</mat-radio-button><br>
-        <mat-radio-button value="always">no</mat-radio-button>
+        <mat-radio-button value="yes">yes</mat-radio-button><br>
+        <mat-radio-button value="no">no</mat-radio-button>
       </mat-radio-group>
     </div>
     <div>
-      <mat-radio-group [formControl]="floatLabelControl">
+      <mat-radio-group [(ngModel)]="feedback.Answer4" [ngModelOptions]="{standalone: true}">
         <label>Do you want to continue the process until you reach the objective ?    </label><br>
-        <mat-radio-button value="auto">yes</mat-radio-button><br>
-        <mat-radio-button value="always">no</mat-radio-button>
+        <mat-radio-button value="yes">yes</mat-radio-button><br>
+        <mat-radio-button value="no">no</mat-radio-button>
       </mat-radio-group>
     </div>
     <div>
       <label>If no please say why: </label><br>
       <mat-form-field class="example-full-width" appearance="fill">
-        <textarea matInput placeholder="Why"></textarea>
+        <textarea matInput placeholder="Why" [(ngModel)]="feedback.Answer5" [ngModelOptions]="{standalone: true}"></textarea>
       </mat-form-field>
     </div>
     <div>
-      <mat-radio-group [formControl]="floatLabelControl">
+      <mat-radio-group [(ngModel)]="feedback.Answer6" [ngModelOptions]="{standalone: true}">
         <label>Overall, how satisfied are you with THIS  experience? </label><br>
-        <mat-radio-button value="auto">satisfied</mat-radio-button><br>
-        <mat-radio-button value="always">Neither satisfied nor dissatisfied</mat-radio-button><br>
-        <mat-radio-button value="always">unsatisfied</mat-radio-button>
+        <mat-radio-button value="satisfied">satisfied</mat-radio-button><br>
+        <mat-radio-button value="Neither satisfied nor dissatisfied">Neither satisfied nor dissatisfied</mat-radio-button><br>
+        <mat-radio-button value="unsatisfied">unsatisfied</mat-radio-button>
       </mat-radio-group>
     </div>
+    <button mat-raised-button class="btn btn-primary" (click)="sendFeedback()">Send</button>
   </form>
 </div>

@@ -62,6 +62,8 @@ import {MatRadioModule} from '@angular/material/radio';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatInputModule} from "@angular/material/input";
+import {MatNativeDateModule} from "@angular/material/core";
+import { CalendarSuggComponent } from './calendar-sugg/calendar-sugg.component';
 
 
 
@@ -105,6 +107,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     LaunshMeetingComponent,
     CalendarSynComponent,
     FeedbackFormComponent,
+    CalendarSuggComponent,
 
 
 
@@ -128,7 +131,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     BrowserAnimationsModule,
     MatInputModule,
     MatCardModule,MatIconModule,MatStepperModule,BrowserAnimationsModule ,ReactiveFormsModule,MatFormFieldModule,MatSelectModule,MatRadioModule,MatGridListModule,MatGridListModule,
-    MatToolbarModule, HttpClientModule,MatTableModule, ScheduleModule,MatListModule,MatSlideToggleModule
+    MatToolbarModule, HttpClientModule,MatTableModule, ScheduleModule,MatListModule,MatSlideToggleModule,MatNativeDateModule
 
   ],
   // </ImportsSnippet>

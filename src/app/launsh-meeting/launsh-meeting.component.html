@@ -30,7 +30,7 @@
 
 
         <select matNativeControl required>
-          <option *ngFor="let meeting of element.meetings.meetingTimeSuggestions" value="{{meeting.meetingTimeSlot.start.dateTime}}">
+          <option *ngFor="let meeting of element.meetings" value="{{meeting.meetingTimeSlot.start.dateTime}}">
             {{meeting.meetingTimeSlot.start.dateTime}}
           </option>
         </select>
