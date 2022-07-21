@@ -61,6 +61,7 @@ import { MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatInputModule} from "@angular/material/input";
 
 
 
@@ -125,7 +126,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    MatInputModule,
     MatCardModule,MatIconModule,MatStepperModule,BrowserAnimationsModule ,ReactiveFormsModule,MatFormFieldModule,MatSelectModule,MatRadioModule,MatGridListModule,MatGridListModule,
     MatToolbarModule, HttpClientModule,MatTableModule, ScheduleModule,MatListModule,MatSlideToggleModule
 
