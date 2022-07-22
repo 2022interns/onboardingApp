@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../services/api.service";
+import {meetingTimeSuggestions} from "../models/meetingTimeSuggestions";
 
 export interface PeriodicElement {
   Mentors: string;
@@ -29,12 +30,12 @@ export class LaunshMeetingComponent {
   ngOnInit(): void {
     this.apiService.getSugg().subscribe((res)=> {
       console.log(res);
-      this.dataSource=res.result.meetingSugg;
+      this.dataSource=res;
     })
   }
 
-  CreateOneMeet(){
-    this.apiService.creatEvent().subscribe((res)=>console.log(res))
+  CreateOneMeet(data: meetingTimeSuggestions){
+    this.apiService.creatEvent(data).subscribe((res)=>console.log(res))
   }
 
   CreateMeets(list: any){

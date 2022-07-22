@@ -13,23 +13,15 @@ export class FeedbackFormComponent {
 
   feedback: Feedback=new Feedback();
 
-  hideRequiredControl = new FormControl(false);
-  floatLabelControl = new FormControl('auto' as FloatLabelType);
-  options = this._formBuilder.group({
-    hideRequired: this.hideRequiredControl,
-    floatLabel: this.floatLabelControl,
-  });
-  constructor(private _formBuilder: FormBuilder, private feedbackService: FeedbackService) {}
+  constructor( private feedbackService: FeedbackService) {}
 
   ngOnInit(){
   }
-  getFloatLabelValue(): FloatLabelType {
-    return this.floatLabelControl.value || 'auto';
-  }
+
   sendFeedback(){
     console.log(this.feedback)
-    /*this.feedbackService.addFeedback(this.feedback).subscribe((res)=>{
+    this.feedbackService.addFeedback(this.feedback).subscribe((res)=>{
       alert("Your feedback sent!");
-    });*/
+    });
   }
 }

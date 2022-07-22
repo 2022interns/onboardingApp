@@ -10,11 +10,11 @@
             <div class="mat-header-cell">Invitation</div>
                       </div>
           <div class="mat-row">
-            <div class="mat-cell">{{dataSource.Mentor.name}}</div>
+            <div class="mat-cell">{{dataSource?.Mentor.name}}</div>
             <div class="mat-cell">{{dataSource?.MentorStatus}}</div>
           </div>
           <div class="mat-row">
-            <div class="mat-cell">{{dataSource.NewJoiner.name}}</div>
+            <div class="mat-cell">{{dataSource?.NewJoiner.name}}</div>
             <div class="mat-cell">{{dataSource?.NewJoinerStatus}}</div>
           </div>
         </div>
@@ -79,19 +79,19 @@
 
            <div class="mat-row">
              <div class="mat-header-cell">Attendees </div>
-             <div class="mat-header-cell">{{dataSource.Mentor.name}} ,{{dataSource.NewJoiner.name}}</div>
+             <div class="mat-header-cell">{{dataSource?.Mentor.name}} ,{{dataSource?.NewJoiner.name}}</div>
                        </div>
            <div class="mat-row">
              <div class="mat-cell">TOPIC</div>
-             <div class="mat-cell">  {{dataSource.Subject}}</div>
+             <div class="mat-cell">  {{dataSource?.Subject}}</div>
            </div>
            <div class="mat-row">
              <div class="mat-cell">Time of start </div>
-             <div class="mat-cell">{{dataSource.StartTime}}</div>
+             <div class="mat-cell">{{dataSource?.StartTime}}</div>
            </div>
            <div class="mat-row">
             <div class="mat-cell">Time of End</div>
-            <div class="mat-cell">{{dataSource.EndTime}}</div>
+            <div class="mat-cell">{{dataSource?.EndTime}}</div>
           </div>
           <div class="mat-row">
             <div class="mat-cell">Status </div>

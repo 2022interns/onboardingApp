@@ -9,7 +9,7 @@ import {Feedback} from "../models/Feedback";
 export class FeedbackService {
   url = 'http://localhost:3000/feedback/';
 
-  constructor(private http: HttpClient,private msalService: MsalService) { }
+  constructor(private http: HttpClient) { }
 
   addFeedback(feedback: Feedback){
     return this.http.post(this.url+'add',feedback);

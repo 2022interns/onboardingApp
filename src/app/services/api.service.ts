@@ -5,6 +5,7 @@ import {NewJoiner} from "../models/NewJoiner";
 import {Mentor} from "../models/Mentor";
 import {AuthService} from "../auth.service";
 import {MsalService} from "@azure/msal-angular";
+import {meetingTimeSuggestions} from "../models/meetingTimeSuggestions";
 
 @Injectable({
   providedIn: 'root'
@@ -50,7 +51,7 @@ export class ApiService {
       "token": token
     };
 
-    return this.http.post<any>(this.url+'sugg',body);
+    return this.http.post<meetingTimeSuggestions[]>(this.url+'sugg',body);
   }
 
   getMentors(){
@@ -59,17 +60,19 @@ export class ApiService {
   getNewjoiners(){
     return this.http.get<NewJoiner[]>('http://localhost:3000/users/newjoiners');
   }
-  creatEvent(){
+  creatEvent(data: meetingTimeSuggestions){
     let accounts: Array<any>;
     accounts=this.msalService.instance.getAllAccounts();
     const str= accounts[0].homeAccountId+'-login.windows.net-accesstoken-'+accounts[0].idTokenClaims.aud+'-'+accounts[0].idTokenClaims.tid+'-calendars.readwrite mailboxsettings.read openid profile user.read email';
     let storage = JSON.parse(<string>localStorage.getItem(str));
     const token =  storage.secret;
-
+    //data.meetings=[];
     const event={
-      "token":token
+      "token":token,
+      meeting: data,
     };
-    return this.http.post<any>(this.url+'create',event);
+
+    return this.http.post<Event>(this.url+'create',event);
   }
 
   creatEvents(list: any){

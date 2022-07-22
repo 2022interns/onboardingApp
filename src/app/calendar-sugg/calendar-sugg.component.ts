@@ -17,7 +17,7 @@ export class CalendarSuggComponent implements OnInit {
   eventSettings: EventSettingsModel = { dataSource: defaultData };
 
   ngOnInit() {
-    this.apiService.getSugg().subscribe((res) => {
+    /*this.apiService.getSugg().subscribe((res) => {
       let data=[];
       for(let i=0; i<res.result.meetingSugg.length;i++){
         for(let j=0;j<res.result.meetingSugg[i].meetings.length;j++){
@@ -33,6 +33,6 @@ export class CalendarSuggComponent implements OnInit {
       }
       console.log(data)
       this.eventSettings = {dataSource: data}
-    });
+    });*/
   }
 }
